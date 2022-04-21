@@ -1,1 +1,3 @@
-# kafka-practice
+# Docker compose
+
+sudo docker-compose up
