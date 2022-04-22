@@ -21,7 +21,12 @@ public class TopicKafka {
     }
 
     @Bean
-    public NewTopic topic1() {
-        return new NewTopic("baeldung", 5, (short) 1);
+    public NewTopic baeldungTopic() {
+        return new NewTopic("baeldung", 1, (short) 1);
+    }
+
+    @Bean
+    public NewTopic messagesTopic() {
+        return new NewTopic("messagesTopic", 1, (short) 1);
     }
 }

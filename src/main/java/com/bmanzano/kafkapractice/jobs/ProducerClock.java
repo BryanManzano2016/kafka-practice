@@ -15,10 +15,17 @@ public class ProducerClock {
     @Autowired
     private KafkaTemplate<String, String> kafkaTemplate;
 
-    @Scheduled(cron = "*/10 * * * * *")
+    @Scheduled(cron = "*/30 * * * * *")
     public void start() {
         String date = LocalDateTime.now().toString();
-        log.info("PRODUCER: {}", date);
+        log.info("PRODUCER:baeldung: {}", date);
         kafkaTemplate.send("baeldung", date);
+    }
+
+    @Scheduled(cron = "*/30 * * * * *")
+    public void startMessageTopic() {
+        String date = LocalDateTime.now().toString();
+        log.info("PRODUCER:messagesTopic : {}", date);
+        kafkaTemplate.send("messagesTopic", date);
     }
 }
